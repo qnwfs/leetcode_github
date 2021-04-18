@@ -11,4 +11,4 @@ def sumOfUnique(nums):
 nums = [1,1,1,1,1]
 print(sumOfUnique(nums))
 
-#testing git commits
+#testing git commits 2
