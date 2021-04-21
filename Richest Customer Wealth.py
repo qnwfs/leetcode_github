@@ -8,3 +8,4 @@ def maxWealth(accounts: list):
 
 accounts = [[2,8,7],[7,1,3],[1,9,5]]
 print(maxWealth(accounts))
+#cooment
