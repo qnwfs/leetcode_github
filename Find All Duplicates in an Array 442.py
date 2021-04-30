@@ -1,17 +1,13 @@
 def findDuplicates(nums: list):
-    dupl = {}
+    x = set()
     lisp = []
     for i in nums:
-        if i not in dupl:
-            dupl[i] = 1
+        if i in x:
+            lisp.append(i)
         else:
-            dupl[i] = 2
-
-    for key in dupl.keys():
-        if dupl[key] == 2:
-            lisp.append(key)
-    return sorted(lisp)
+            x.add(i)
+    return lisp
 
 
-nums = [1]
+nums = [1,2,3,4,5,6,7,7]
 print(findDuplicates(nums))
