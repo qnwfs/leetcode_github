@@ -10,5 +10,5 @@ def findPeakElement(nums: list):
     return left
 
 
-nums = [1,2,3,1,2,1]
+nums = [1,2,3,5,1,2,1]
 print(findPeakElement(nums))
