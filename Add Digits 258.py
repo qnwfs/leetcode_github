@@ -1,14 +1,13 @@
 def addDigits(num: int):
-    summa = 0
+    sum = 0
     while num > 0:
-        summa += num % 10
+        sum += num % 10
         num = num // 10
-    if summa < 9:
-        return summa
-    else:
-        num = summa
-        return addDigits(num)
+        if num == 0 and sum > 9:
+            num = sum
+            sum = 0
+    return sum
 
 
-num = 0
+num = 38
 print(addDigits(num))
