@@ -1,11 +1,8 @@
 def missingNumber(nums):
-    nums.sort()
-    a = [i for i in range(len(nums)+1)]
-    a = set(a)
-    nums = set(nums)
-    x = a - nums
-    for i in x:
-        return i
+    expected_sum = len(nums) * (len(nums) + 1) // 2
+    actual_sum = sum(nums)
+    return expected_sum - actual_sum
+
 
 nums = [1]
 print(missingNumber(nums))
