@@ -1,29 +1,17 @@
 def isIsomorphic(s: str, t: str) -> bool:
-    """
-    Устанавливаем соответствие между символами строк,
-    проверям находятся ли они на правильных местах
-    """
-    if len(s) != len(t):
-        return False
-    else:
-        values = {}
-        positions = {}
-        for i in range(len(s)):
-            if s[i] not in values.keys():
-                if t[i] not in values.values():
-                    values[s[i]] = t[i]
-        for i in t:
-            if i not in values.values():
+    mydict = dict()
+    val = "" #сохраняет буквы второго слова, которые уже сопоставлены с буквами из первого
+    for i in range(len(s)):
+        if s[i] not in mydict:
+            if t[i] not in val:
+                mydict[s[i]] = t[i]
+                val += t[i]
+            else:
                 return False
-        for i in s:
-            if i not in values.keys():
+        else:
+            if mydict[s[i]] != t[i]:
                 return False
-        for i in range(len(s)):
-            positions[i] = s[i]
-        for key, value in positions.items():
-            if values[value] != t[key]:
-                return False
-        return True
+    return True
 
 
 s = "badc"
