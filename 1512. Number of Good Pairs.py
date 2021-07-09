@@ -1,16 +1,16 @@
 def numIdenticalPairs(nums) -> int:
-    dict = {}
-    total = 0
-    for i in range(len(nums)):
-        if nums[i] not in dict:
-            dict[nums[i]] = 0
-            dict[nums[i]] += 1
+    pairs = 0
+    d = {}
+    for i in nums:
+        if i in d:
+            d[i] += 1
         else:
-            dict[nums[i]] += 1
-    for i in dict:
-        if dict[i] > 1:
-            total += (dict[i] * (dict[i] - 1) // 2)
-    return total
+            d[i] = 1
+    for num in d:
+        val = d[num]
+        for i in range(val):
+            pairs += i
+    return pairs
 
 
 nums = [1,2,3,1,1,3]
