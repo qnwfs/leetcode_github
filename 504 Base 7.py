@@ -1,18 +1,15 @@
-def convertToBase7(num: int) -> str:
-    total = ''
-    otr = False
-    if num == 0:
-        return '0'
+def convertToBase7(self, num: int) -> str:
+    if not num:
+        return "0"
+    l = []
+    x = num
     if num < 0:
-        otr = True
-        num = num * (-1)
+        num = -num
     while num > 0:
-        total += str(num % 7)
-        num = num // 7
-    if otr:
-        return '-' + total[::-1]
-    else:
-        return total[::-1]
+        r = num % 7
+        l.append(str(r))
+        num //= 7
+    return "".join(l[::-1]) if x>=0 else "-" + "".join(l[::-1])
 
 num = 7
 print(convertToBase7(num))
